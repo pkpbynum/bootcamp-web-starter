@@ -6,16 +6,18 @@ import theme from './theme'
 import client from './client'
 import Home from './containers/Home'
 import NavBar from './containers/NavBar'
+import Footer from './containers/Footer'
 
 const App = () => (
   <Router>
     <ThemeProvider theme={theme}>
       <ApolloProvider client={client}>
         <div className="App">
-          <NavBar></NavBar>
+          <NavBar />
           <Switch>
             <Route path="/" component={Home} />
           </Switch>
+          <Footer />
         </div>
       </ApolloProvider>
     </ThemeProvider>

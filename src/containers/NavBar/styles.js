@@ -32,6 +32,7 @@ export const NavButton = styled.button`
     font-family: ${({theme}) => theme.fonts.standard};
     font-weight: bold;
     font-size: 5vh;
+    color: white;
 `
 export const Image = styled.img`
     max-height: 100%;
