@@ -14,7 +14,9 @@ export const LogoButton = styled.button`
     align-items: center;
     justify-content: center;
     border: none;
-    
+    &:focus{
+        outline: none;
+    }
 `
 export const LogoText = styled.p`
     color: ${({ theme }) => theme.colors.crimson};
@@ -32,8 +34,18 @@ export const NavButton = styled.button`
     border: none;
     font-family: ${({ theme }) => theme.fonts.standard};
     font-weight: bold;
-    font-size: 5vh;
+    font-size: 4vh;
     color: white;
+    transition: .25s;
+    &:focus{
+        outline: none;
+    }
+
+    &:hover{
+        background-color: ${({ theme }) => theme.colors.lightred};
+        font-size: 4.5vh;
+    } 
+
 `
 export const Image = styled.img`
     max-height: 100%;
