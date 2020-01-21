@@ -7,6 +7,8 @@ import client from './client'
 import Home from './containers/Home'
 import NavBar from './containers/NavBar'
 import Footer from './containers/Footer'
+import Clubs from './containers/Clubs'
+import SpecificClub from './containers/SpecificClub'
 
 const App = () => (
   <Router>
@@ -15,6 +17,8 @@ const App = () => (
         <div className="App">
           <NavBar />
           <Switch>
+            <Route path="/Club/:id" component={SpecificClub} />
+            <Route path="/Browse" component={Clubs} />
             <Route path="/" component={Home} />
           </Switch>
           <Footer />
