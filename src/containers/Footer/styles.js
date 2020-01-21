@@ -7,7 +7,7 @@ export const FootContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: ${({ theme }) => theme.colors.lightred} 1vh;
+    border-top: ${({ theme }) => theme.colors.lightred} 1vh solid; 
     font-family:${({ theme }) => theme.fonts.standard};
 `
 
