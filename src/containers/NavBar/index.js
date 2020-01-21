@@ -18,6 +18,16 @@ const NavBar = () => (
             Browse All Clubs
       </NavButton>
     </ButtonLink>
+    <ButtonLink to="/Browse">
+      <NavButton>
+            Advanced Search
+      </NavButton>
+    </ButtonLink>
+    <ButtonLink to="/Browse">
+      <NavButton styles={{ backgroundColor: '#c08a1d' }}>
+            Donate
+      </NavButton>
+    </ButtonLink>
   </NavContainer>
 )
 
