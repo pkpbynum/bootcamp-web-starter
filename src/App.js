@@ -9,6 +9,7 @@ import NavBar from './containers/NavBar'
 import Footer from './containers/Footer'
 import Clubs from './containers/Clubs'
 import SpecificClub from './containers/SpecificClub'
+import Donate from './containers/Donate'
 
 const App = () => (
   <Router>
@@ -19,6 +20,7 @@ const App = () => (
           <Switch>
             <Route path="/Clubs/:id" component={SpecificClub} />
             <Route path="/Browse" component={Clubs} />
+            <Route path="/Donate" component={Donate} />
             <Route path="/" component={Home} />
           </Switch>
           <Footer />

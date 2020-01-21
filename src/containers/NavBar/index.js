@@ -23,7 +23,7 @@ const NavBar = () => (
             Advanced Search
       </NavButton>
     </ButtonLink>
-    <ButtonLink to="/Browse">
+    <ButtonLink to="/Donate">
       <NavButton styles={{ backgroundColor: '#c08a1d' }}>
             Donate
       </NavButton>
