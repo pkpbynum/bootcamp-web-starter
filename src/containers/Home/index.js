@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   JumboContainer, JumboImage, HomeText, TextContainer, LoginButton,
+  StyledLink,
 } from './styles'
 
 const Home = () => (
@@ -9,8 +10,12 @@ const Home = () => (
     <TextContainer>
       <HomeText>Welcome to ClubHQ!</HomeText>
       <HomeText style={{ fontSize: '3vh' }}>Connect with over 12+ student organizations on Harvard campus!</HomeText>
-      <LoginButton style={{ backgroundColor: '#c08a1d' }}>Login</LoginButton>
-      <LoginButton style={{ backgroundColor: '#4ca349' }}>Sign Up</LoginButton>
+      <StyledLink to="/Login">
+        <LoginButton style={{ backgroundColor: '#c08a1d' }}>Login</LoginButton>
+      </StyledLink>
+      <StyledLink to="/SignUp">
+        <LoginButton style={{ backgroundColor: '#4ca349' }}>Sign Up</LoginButton>
+      </StyledLink>
     </TextContainer>
 
   </JumboContainer>

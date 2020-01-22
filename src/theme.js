@@ -5,6 +5,7 @@ const theme = {
     crimson: '#A51C30',
     lightred: '#cf4242',
     gold: '#c08a1d',
+    darkgold: '#996a0c',
     Dartmouth: '#00693e',
     Princeton: '#ff8f00',
     Columbia: {

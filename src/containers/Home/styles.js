@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const JumboContainer = styled.div`
     width: 100%;
@@ -33,7 +34,7 @@ export const TextContainer = styled.div`
     align-items: center;
 `
 export const LoginButton = styled.button`
-    border:none;
+    border: none;
     border-radius: 1vh;
     color: white;
     text-align: center;
@@ -42,5 +43,10 @@ export const LoginButton = styled.button`
     font-weight: bold;
     padding: 2vh;
     margin: 1vh;
+    width: 100%;
+`
+export const StyledLink = styled(Link)`
+    border: none;
+    text-decoration: none;
     width: 30%;
 `
