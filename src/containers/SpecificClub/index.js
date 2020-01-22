@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useParams } from 'react'
 import ShowComments from './ShowComments'
 import {
   LargeContainer, SmallContainer, SmallerContainer, Title, TitleContainer,
@@ -7,6 +7,8 @@ import {
 
 const SpecificClub = () => {
   const info = { title: 'Club' }
+  const { id } = useParams()
+  console.log(id)
 
   return (
     <div style={{
