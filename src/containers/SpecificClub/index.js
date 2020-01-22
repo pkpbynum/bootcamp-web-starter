@@ -1,5 +1,7 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
+import { useQuery } from '@apollo/react-hooks'
+import { GETCLUB } from './graphql'
 import ShowComments from './ShowComments'
 import {
   LargeContainer, SmallContainer, SmallerContainer, Title, TitleContainer,
@@ -7,8 +9,13 @@ import {
 } from './styles'
 
 const SpecificClub = () => {
-  const info = { title: 'Club' }
+  // const info = { title: 'Club' }
   const { id } = useParams()
+  const history = useHistory()
+  const [data, error] = useQuery(GETCLUB, { variables: { clubId: id }, partialRefetch: true })
+  if (error) {
+    history.push('/Browse')
+  }
 
   return (
     <div style={{
@@ -17,20 +24,20 @@ const SpecificClub = () => {
     >
       <LargeContainer>
         <TitleContainer>
-          <Title>{ info.title }</Title>
+          <Title>{ data.title }</Title>
         </TitleContainer>
       </LargeContainer>
       <LargeContainer>
         <SummaryContainer>
           <SummaryHead>Summary:</SummaryHead>
-          <Summary>Summary text will go here</Summary>
+          <Summary>{data.summary}</Summary>
         </SummaryContainer>
         <SmallContainer>
           <SmallerContainer>
-              Rating
+              Rating:
           </SmallerContainer>
           <SmallerContainer>
-              Tags
+              Tags:
           </SmallerContainer>
         </SmallContainer>
       </LargeContainer>
