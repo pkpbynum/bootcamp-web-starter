@@ -1,6 +1,8 @@
 import React from 'react'
+import ShowComments from './ShowComments'
 import {
-  LargeContainer, SmallContainer, SmallerContainer, Title, TitleContainer, SummaryContainer,
+  LargeContainer, SmallContainer, SmallerContainer, Title, TitleContainer,
+  SummaryContainer, SummaryHead, Summary,
 } from './styles'
 
 const SpecificClub = () => {
@@ -18,7 +20,8 @@ const SpecificClub = () => {
       </LargeContainer>
       <LargeContainer>
         <SummaryContainer>
-          text
+          <SummaryHead>Summary:</SummaryHead>
+          <Summary>Summary text will go here</Summary>
         </SummaryContainer>
         <SmallContainer>
           <SmallerContainer>
@@ -29,6 +32,7 @@ const SpecificClub = () => {
           </SmallerContainer>
         </SmallContainer>
       </LargeContainer>
+      <ShowComments />
     </div>
   )
 }
