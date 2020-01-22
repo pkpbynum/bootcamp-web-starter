@@ -25,11 +25,12 @@ export const DonateText = styled.p`
     margin: 1vh;
     
 `
-export const DonateButton = styled.div`
+export const DonateButton = styled.button`
     border: none;
     background-color: ${({ theme }) => theme.colors.green};
     font-family: ${({ theme }) => theme.fonts.standard};
     font-weight: bold;
+    font-size: 2vh;
     color: white;
     width: 70%;
     padding: 2vh;
@@ -41,6 +42,9 @@ export const DonateButton = styled.div`
         background-color: ${({ theme }) => theme.colors.lightgreen};
         width: 100%;
         box-shadow: 0 4px 8px 0 ${({ theme }) => theme.colors.green}, 0 6px 20px 0 ${({ theme }) => theme.colors.green};
+    }
+    &:focus {
+        outline: none;
     }
 `
 export const StyledCardElement = styled(CardElement)`
@@ -57,7 +61,7 @@ export const ClubName = styled.input`
     height: 5vh;
     margin-top: 2vh;
     margin-bottom: 1vh;
-    width: 26%;
+    width: 31%;
     padding: 0.5vh;
     font-size: 2vh;
     padding-left: 2vh;

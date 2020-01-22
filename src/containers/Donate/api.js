@@ -22,7 +22,7 @@ const CheckoutForm = ({ stripe }) => {
   return (
     <div
       style={{
-        width: '25%', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center',
+        width: '30%', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center',
       }}
       className="checkout"
     >
