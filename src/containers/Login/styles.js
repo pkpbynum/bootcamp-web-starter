@@ -31,7 +31,7 @@ export const LoginContainer = styled.div`
     padding-top: 9%;
 `
 
-export const LoginButton = styled.div`
+export const LoginButton = styled.button`
     border: none;
     background-color: ${({ theme }) => theme.colors.gold};
     font-family: ${({ theme }) => theme.fonts.standard};
@@ -42,4 +42,14 @@ export const LoginButton = styled.div`
     border-radius: 1vh;
     margin-top: 2vh;
     text-align: center;
+    transition: .25s;
+    &:hover{
+        background-color: ${({ theme }) => theme.colors.darkgold};
+        width: 40%;
+        cursor: pointer;
+    }
+    &:focus{
+        outline: none;
+    }
+
 `
