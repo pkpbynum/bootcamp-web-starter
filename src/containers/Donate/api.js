@@ -27,7 +27,7 @@ const CheckoutForm = ({ stripe }) => {
       className="checkout"
     >
       <StyledCardElement />
-      <DonateButton type="button" onClick={submit}>Purchase</DonateButton>
+      <DonateButton type="button" onClick={submit}>Donate $5</DonateButton>
     </div>
   )
 }

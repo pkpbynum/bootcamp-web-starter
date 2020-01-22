@@ -32,9 +32,9 @@ export const LoginContainer = styled.div`
 
 `
 
-export const LoginButton = styled.div`
+export const LoginButton = styled.button`
     border: none;
-    background-color: ${({ theme }) => theme.colors.gold};
+    background-color: ${({ theme }) => theme.colors.green};
     font-family: ${({ theme }) => theme.fonts.standard};
     font-weight: bold;
     color: white;
@@ -43,8 +43,13 @@ export const LoginButton = styled.div`
     border-radius: 1vh;
     margin-top: 2vh;
     text-align: center;
+    transition: .25s;
     &:hover{
-        background-color: ${({ theme }) => theme.colors.darkgold};
+        background-color: ${({ theme }) => theme.colors.darkgreen};
         width: 40%;
+        cursor: pointer;
+    }
+    &:focus{
+        outline: none;
     }
 `
