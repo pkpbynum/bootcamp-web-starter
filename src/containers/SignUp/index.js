@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useMutation } from '@apollo/react-hooks'
+import { REGISTER } from './graphql'
 import { LoginInput, LoginContainer, LoginButton } from './styles'
 
 const SignUp = () => {
@@ -6,6 +8,21 @@ const SignUp = () => {
   const [password, setPassword] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
+  const [classYear, setClassYear] = useState('')
+
+  const [reg, { loading, error: regError }] = useMutation(
+    REGISTER,
+    {
+      variables: {
+        email, password, firstName, lastName, classYear,
+      },
+      onCompleted: ({ register: { token } }) => localStorage.setItem('token', token),
+    },
+  )
+
+  if (loading) return 'Loading!'
+  if (regError) return `Error ${regError}`
+
 
   return (
     <LoginContainer>
@@ -22,9 +39,10 @@ Sign Up:
         <LoginInput name="firstName" placeholder="First Name" value={firstName} onChange={e => setFirstName(e.target.value)} style={{ flex: '1', marginRight: '1vh' }} />
         <LoginInput name="lastName" placeholder="Last Name" value={lastName} onChange={e => setLastName(e.target.value)} style={{ flex: '1', marginLeft: '1vh' }} />
       </div>
+      <LoginInput name="classYear" placeholder="Class Year" value={classYear} onChange={e => setClassYear(e.target.value)} />
       <LoginInput name="email" placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
       <LoginInput type="password" name="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
-      <LoginButton>Sign Up</LoginButton>
+      <LoginButton onClick={reg}>Sign Up</LoginButton>
     </LoginContainer>
   )
 }
