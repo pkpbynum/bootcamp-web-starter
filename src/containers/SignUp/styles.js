@@ -37,6 +37,7 @@ export const LoginButton = styled.button`
     background-color: ${({ theme }) => theme.colors.green};
     font-family: ${({ theme }) => theme.fonts.standard};
     font-weight: bold;
+    font-size: 2vh;
     color: white;
     width: 30%;
     padding: 2vh;
