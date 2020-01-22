@@ -14,8 +14,12 @@ export const LogoButton = styled.button`
     align-items: center;
     justify-content: center;
     border: none;
+    transition: 0.25;
     &:focus{
         outline: none;
+    }
+    &:hover{
+        cursor: pointer;
     }
 `
 export const LogoText = styled.p`
@@ -44,6 +48,7 @@ export const NavButton = styled.button`
     &:hover{
         background-color: ${({ theme }) => theme.colors.lightred};
         font-size: 4.5vh;
+        cursor: pointer;
     } 
 
 `

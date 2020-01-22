@@ -44,9 +44,24 @@ export const LoginButton = styled.button`
     padding: 2vh;
     margin: 1vh;
     width: 100%;
+    transition: .25s;
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
 `
 export const StyledLink = styled(Link)`
     border: none;
     text-decoration: none;
     width: 30%;
+    transition: .25s;
+    &:hover {
+        cursor: pointer;
+        width: 40%;
+    }
+    &:focus {
+        outline: none;
+    }
 `
