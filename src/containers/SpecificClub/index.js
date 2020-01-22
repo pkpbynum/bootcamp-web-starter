@@ -1,4 +1,5 @@
-import React, { useParams } from 'react'
+import React from 'react'
+import { useParams } from 'react-router-dom'
 import ShowComments from './ShowComments'
 import {
   LargeContainer, SmallContainer, SmallerContainer, Title, TitleContainer,
@@ -8,7 +9,6 @@ import {
 const SpecificClub = () => {
   const info = { title: 'Club' }
   const { id } = useParams()
-  console.log(id)
 
   return (
     <div style={{
