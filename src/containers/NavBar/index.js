@@ -3,6 +3,7 @@ import {
   NavContainer, NavButton, LogoButton, Image, LogoText, LogoLink, ButtonLink,
 } from './styles'
 
+
 const NavBar = () => (
   <NavContainer>
     <LogoLink to="/">
@@ -23,7 +24,7 @@ const NavBar = () => (
             Advanced Search
       </NavButton>
     </ButtonLink>
-    <ButtonLink to="/Browse">
+    <ButtonLink to="/Donate">
       <NavButton styles={{ backgroundColor: '#c08a1d' }}>
             Donate
       </NavButton>

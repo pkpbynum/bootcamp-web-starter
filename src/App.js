@@ -11,6 +11,7 @@ import Clubs from './containers/Clubs'
 import SpecificClub from './containers/SpecificClub'
 import Login from './containers/Login'
 import SignUp from './containers/SignUp'
+import Donate from './containers/Donate'
 
 const App = () => (
   <Router>
@@ -23,6 +24,7 @@ const App = () => (
             <Route path="/Browse" component={Clubs} />
             <Route path="/Login" component={Login} />
             <Route path="/SignUp" component={SignUp} />
+            <Route path="/Donate" component={Donate} />
             <Route path="/" component={Home} />
           </Switch>
           <Footer />
