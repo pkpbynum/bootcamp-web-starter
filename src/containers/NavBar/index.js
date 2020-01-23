@@ -1,29 +1,26 @@
 import React, { useState } from 'react'
 import {
   NavContainer, NavButton, LogoButton, Image, LogoText, LogoLink, ButtonLink,
+  LogInOut,
 } from './styles'
 
 
-const NavBar = ({ tokenState, setTokenState }) => {
-  console.log(tokenState)
+const NavBar = ({ setTokenState }) => {
   const Logout = () => {
     if (!localStorage.getItem('token')) {
-      // setTokenState(0)
-      // window.location.reload()
       return (
         <ButtonLink to="/Login">
-          <NavButton styles={{ backgroundColor: '#c08a1d' }}>
+          <LogInOut styles={{ backgroundColor: '#c08a1d' }}>
             Login
-          </NavButton>
+          </LogInOut>
         </ButtonLink>
       )
     }
 
     setTokenState(1)
-    // window.location.reload()
     return (
       <ButtonLink to="/">
-        <NavButton
+        <LogInOut
           styles={{ backgroundColor: '#c08a1d' }}
           onClick={() => {
             localStorage.removeItem('token')
@@ -31,7 +28,7 @@ const NavBar = ({ tokenState, setTokenState }) => {
           }}
         >
               Logout
-        </NavButton>
+        </LogInOut>
       </ButtonLink>
     )
   }
