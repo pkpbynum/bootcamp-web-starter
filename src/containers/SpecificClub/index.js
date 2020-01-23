@@ -18,7 +18,6 @@ const SpecificClub = () => {
   const history = useHistory()
   const { loading, data, error } = useQuery(GETCLUB,
     { variables: { clubId: id }, partialRefetch: true })
-  console.log(data)
   if (error) {
     return <Redirect to="/Browse" />
   }
