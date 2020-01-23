@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
 import { useQuery, useLazyQuery, useMutation } from '@apollo/react-hooks'
 import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import { useMutation } from '@apollo/react-hooks'
 import {
   LOGIN,
 } from './graphql.js'
-import { LoginInput, LoginContainer, LoginButton } from './styles'
+import { LoginInput, LoginContainer, LoginButton, Error } from './styles'
 
 const Login = ({ tokenState, setTokenState }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
   const history = useHistory()
-  console.log(tokenState, setTokenState)
 
   const [log, { loading: logLoading, error: logError }] = useMutation(
     LOGIN,
@@ -22,11 +24,19 @@ const Login = ({ tokenState, setTokenState }) => {
         return setTokenState(1)
         // return window.location.reload()
       },
+      onError: ({ graphQLErrors }) => {
+        if (graphQLErrors) {
+          // graphQLErrors.map(({ message, locations, path }) => console.log(
+          // `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
+          setMessage(graphQLErrors[0].message)
+          // ))
+        }
+      },
     },
   )
 
-  if (logLoading) return 'Loading!'
-  if (logError) return `Error: ${logError}`
+  if (logLoading) return 'Loading'
+
 
   return (
     <LoginContainer>
@@ -39,6 +49,7 @@ Log In:
       <LoginInput name="email" placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
       <LoginInput name="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
       <LoginButton onClick={log}>Log In</LoginButton>
+      {logError ? <Error>{message}</Error> : <p />}
     </LoginContainer>
   )
 }
