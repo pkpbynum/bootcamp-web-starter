@@ -1,16 +1,12 @@
 import React from 'react'
 import { ResultCard, ClubText, StyledLink } from './styles'
 
-const ShowClubs = ({ clubArray }) => {
-  const stuff = clubArray.map(item => (
-    <StyledLink to={`/Clubs/${item.id}`} key={item.id}>
-      <ResultCard>
-        <ClubText>{item.title}</ClubText>
-      </ResultCard>
-    </StyledLink>
-  ))
-
-  return stuff
-}
+const ShowClubs = ({ clubArray }) => clubArray.allClubs.map(({ id, name }) => (
+  <StyledLink to={`/Clubs/${id}`} key={id}>
+    <ResultCard>
+      <ClubText>{name}</ClubText>
+    </ResultCard>
+  </StyledLink>
+))
 
 export default ShowClubs

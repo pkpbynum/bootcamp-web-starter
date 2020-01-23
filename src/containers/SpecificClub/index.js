@@ -18,22 +18,23 @@ const SpecificClub = () => {
     return <Redirect to="/Browse"/>
   }
   if (loading) return 'Loading!'
-
+  console.log(data)
 
   return (
+    
     <div style={{
       display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
     }}
     >
       <LargeContainer>
         <TitleContainer>
-          <Title>{ data.name }</Title>
+          <Title>{ data.getClub.name }</Title>
         </TitleContainer>
       </LargeContainer>
       <LargeContainer>
         <SummaryContainer>
           <SummaryHead>Summary:</SummaryHead>
-          <Summary>{data.summary}</Summary>
+          <Summary>{data.getClub.summary}</Summary>
         </SummaryContainer>
         <SmallContainer>
           <SmallerContainer>
