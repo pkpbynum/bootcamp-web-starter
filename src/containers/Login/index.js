@@ -47,7 +47,7 @@ const Login = ({ tokenState, setTokenState }) => {
 Log In:
       </p>
       <LoginInput name="email" placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
-      <LoginInput name="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
+      <LoginInput type="password" name="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
       <LoginButton onClick={log}>Log In</LoginButton>
       {logError ? <Error>{message}</Error> : <p />}
     </LoginContainer>
