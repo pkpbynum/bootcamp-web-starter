@@ -11,10 +11,11 @@ import {
 } from './graphql'
 
 
-const SearchBar = ({ input, setInput }) => {
+const SearchBar = ({ input, setInput, search }) => {
   const [message, setMessage] = useState('')
   const history = useHistory()
 
+  /*
   const [search, { loading, error }] = useLazyQuery(
     SEARCH,
     {
@@ -32,7 +33,7 @@ const SearchBar = ({ input, setInput }) => {
       //   }
       // },
     },
-  )
+  ) */
 
   return (
     <SearchContainer>

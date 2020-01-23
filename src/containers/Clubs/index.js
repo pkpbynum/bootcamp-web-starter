@@ -1,10 +1,11 @@
-import { useQuery } from '@apollo/react-hooks'
-import { ALLCLUBS } from './graphql'
-import React, { useState } from 'react'
 import {
+  useQuery,
   useLazyQuery,
 } from '@apollo/react-hooks'
+import React, { useState } from 'react'
+
 import { useHistory } from 'react-router-dom'
+import { ALLCLUBS } from './graphql'
 import SearchBar from './SearchBar'
 import ShowClubs from './ShowClubs'
 import { ClubContainer } from './styles'
@@ -13,18 +14,15 @@ import {
 } from './SearchBar/graphql'
 
 const Clubs = () => {
-  const { loading, error, data } = useQuery(ALLCLUBS)
-
-
-  if (loading) return 'Loading!'
-  if (error) return 'error!'
-
-
   const [input, setInput] = useState('')
   const [message, setMessage] = useState('')
   const history = useHistory()
+  const [clubs, setClubs] = useState([])
 
-  const [search, { loading, error, data }] = useLazyQuery(
+  const { loading, error, data } = useQuery(ALLCLUBS)
+
+
+  const [search, { loading: loading2, error: error2, data: data2 }] = useLazyQuery(
     SEARCH,
     {
       variables: { input },
@@ -38,11 +36,23 @@ const Clubs = () => {
       // },
     },
   )
+  if (loading) return 'Loading!'
+  if (error) return 'error!'
+
+  const clubArray = () => {
+    if (!data2) {
+      console.log(data.allClubs)
+      return data.allClubs
+    }
+
+    return data2.search
+  }
+
 
   return (
     <ClubContainer>
-      <SearchBar input={input} setInput={setInput} />
-      <ShowClubs clubArray={clubArray} />
+      <SearchBar input={input} setInput={setInput} search={search} />
+      <ShowClubs clubArray={clubArray()} />
     </ClubContainer>
 
   )
