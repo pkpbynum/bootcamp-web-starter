@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useQuery, useLazyQuery, useMutation } from '@apollo/react-hooks'
+import { useHistory } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import { useMutation } from '@apollo/react-hooks'
 import {
@@ -6,7 +8,7 @@ import {
 } from './graphql.js'
 import { LoginInput, LoginContainer, LoginButton, Error } from './styles'
 
-const Login = () => {
+const Login = ({ tokenState, setTokenState }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
@@ -18,7 +20,9 @@ const Login = () => {
       variables: { email, password },
       onCompleted: ({ login: { token } }) => {
         localStorage.setItem('token', token)
-        history.push('/')
+        history.push('/Browse')
+        return setTokenState(1)
+        // return window.location.reload()
       },
       onError: ({ graphQLErrors }) => {
         if (graphQLErrors) {
@@ -32,6 +36,7 @@ const Login = () => {
   )
 
   if (logLoading) return 'Loading'
+
 
   return (
     <LoginContainer>
