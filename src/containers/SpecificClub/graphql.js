@@ -9,6 +9,7 @@ query getClub($clubId:ID!){
           website
           summary
           competitiveness
+          size
         }
       }
     `
