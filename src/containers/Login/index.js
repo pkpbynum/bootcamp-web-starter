@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { useQuery, useLazyQuery, useMutation } from '@apollo/react-hooks'
-import { useHistory } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import { useMutation } from '@apollo/react-hooks'
 import {
   LOGIN,
 } from './graphql.js'
-import { LoginInput, LoginContainer, LoginButton, Error } from './styles'
+import {
+  LoginInput, LoginContainer, LoginButton, Error,
+} from './styles'
 
 const Login = ({ tokenState, setTokenState }) => {
   const [email, setEmail] = useState('')
