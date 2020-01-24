@@ -8,10 +8,6 @@ query Search ($searchText: String!) {
       id
       name
     }
-    ... on Tag {
-      id
-      text
-    }
   }
 }
 `
