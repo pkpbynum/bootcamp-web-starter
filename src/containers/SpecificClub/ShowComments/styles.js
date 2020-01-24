@@ -3,10 +3,11 @@ import styled from 'styled-components'
 export const CommentContainer = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    padding: 1vh;
+    padding: 3vh;
     margin: 1vh;
-    width: 90%;
+    width: 70%;
     background-color: lightgrey;
     border-radius: 1vh;
 `
@@ -39,4 +40,15 @@ export const CommentButton = styled.button`
     font-size: 3vh;
     font-weight: bold;
     color: white;
+`
+export const CommentBubble = styled.div`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    margin: 1vh;
+    margin-left: 2vh;
+    font-size: 2vh;
+    background-color: white;
+    border: none;
+    border-radius: 2vh;
+    padding: 2vh;
+
 `
