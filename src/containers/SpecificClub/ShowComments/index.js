@@ -2,7 +2,7 @@ import React, { useReducer } from 'react'
 import { useMutation, useQuery } from '@apollo/react-hooks'
 import { ADDEVAL, GETEVAL } from './graphql'
 import {
-  Comment, CommentContainer, CommentInput, CommentButton, CommentBubble,
+  Comment, CommentContainer, CommentInput, CommentButton, CommentBubble, BubbleDiv,
 } from './styles'
 
 const formReducer = (prevState, payload) => ({ ...prevState, ...payload })
@@ -62,21 +62,26 @@ const ShowComments = ({ id }) => {
           rating, hoursOfMeeting, hoursOfWork, comments,
         }) => (
           <CommentContainer key={id}>
-            <Comment>
-              {`${comments}`}
-            </Comment>
-            <CommentBubble>
-              {`Rating: ${rating}`}
+            <div>
+              <Comment>
+                {`${comments}`}
+              </Comment>
+            </div>
 
-            </CommentBubble>
-            <CommentBubble>
-              {`Meeting Hours: ${hoursOfMeeting}`}
+            <BubbleDiv>
+              <CommentBubble>
+                {`Rating: ${rating}`}
 
-            </CommentBubble>
-            <CommentBubble>
-              {`Working Hours: ${hoursOfWork}`}
+              </CommentBubble>
+              <CommentBubble>
+                {`Meeting Hours: ${hoursOfMeeting}`}
 
-            </CommentBubble>
+              </CommentBubble>
+              <CommentBubble>
+                {`Working Hours: ${hoursOfWork}`}
+
+              </CommentBubble>
+            </BubbleDiv>
           </CommentContainer>
         ),
       )}
