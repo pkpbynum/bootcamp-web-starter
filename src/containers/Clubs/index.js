@@ -21,11 +21,10 @@ const Clubs = () => {
 
   const { loading, error, data } = useQuery(ALLCLUBS)
 
-
   const [search, { loading: loading2, error: error2, data: data2 }] = useLazyQuery(
     SEARCH,
     {
-      variables: { input },
+      variables: { searchText: input },
       // onError: ({ graphQLErrors }) => {
       //   if (graphQLErrors) {
       //   // graphQLErrors.map(({ message, locations, path }) => console.log(
@@ -36,15 +35,17 @@ const Clubs = () => {
       // },
     },
   )
-  if (loading) return (<ClubContainer><SearchBar /></ClubContainer>)
-  if (error) return 'error!'
+  if (loading || loading2) return (<ClubContainer><SearchBar /></ClubContainer>)
+  if (error || error2) return 'error!'
+
+  console.log(data2)
 
   const clubArray = () => {
     if (!data2) {
       console.log(data.allClubs)
       return data.allClubs
     }
-
+    console.log(data2.search)
     return data2.search
   }
 

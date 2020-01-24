@@ -38,7 +38,7 @@ const SearchBar = ({ input, setInput, search }) => {
   return (
     <SearchContainer>
       <SearchInput placeholder="Search Clubs" value={input} onChange={e => setInput(e.target.value)} />
-      <SearchButton onClick={window.location.reload}>Search</SearchButton>
+      <SearchButton onClick={search}>Search</SearchButton>
       <SortContainer>
         <p style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>Sort By: </p>
         <SmallButton>A-Z</SmallButton>
