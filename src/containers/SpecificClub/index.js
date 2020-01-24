@@ -9,7 +9,7 @@ import {
   RatingHead, Rating,
   EmailHead, Email,
   WebsiteHead, Website, SizeHead, Size,
-  CompetitivenessHead, Competitiveness,
+  CompetitivenessHead, Competitiveness, BottomContainer,
 } from './styles'
 
 const SpecificClub = () => {
@@ -44,7 +44,6 @@ const SpecificClub = () => {
             <RatingHead>Rating:</RatingHead>
             <Rating>{data.getClub.avgRating}</Rating>
           </SmallerContainer>
-
           <SmallerContainer>
             <SizeHead>Size:</SizeHead>
             <Size>{data.getClub.size}</Size>
@@ -58,15 +57,16 @@ const SpecificClub = () => {
           </SmallerContainer>
         </SmallContainer>
       </LargeContainer>
+
       <LargeContainer>
-        <SmallerContainer>
+        <BottomContainer>
           <EmailHead>Email:</EmailHead>
           <Email>{data.getClub.email}</Email>
-        </SmallerContainer>
-        <SmallerContainer>
+        </BottomContainer>
+        <BottomContainer>
           <WebsiteHead>Website:</WebsiteHead>
           <Website>{data.getClub.website}</Website>
-        </SmallerContainer>
+        </BottomContainer>
       </LargeContainer>
       <ShowComments />
     </div>

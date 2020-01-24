@@ -38,7 +38,7 @@ const NavBar = ({ setTokenState }) => {
     <NavContainer>
       <LogoLink to="/">
         <LogoButton>
-          <Image src="./ClubHQ.png" alt="ClubHQ" />
+          <Image src="../../ClubHQ.png" alt="ClubHQ" />
         </LogoButton>
         <LogoButton>
           <LogoText>ClubHQ</LogoText>
