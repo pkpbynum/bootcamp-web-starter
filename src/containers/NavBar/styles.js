@@ -53,8 +53,8 @@ export const NavButton = styled.button`
 
 `
 export const Image = styled.img`
-    max-height: 100%;
-    max-width: 100%;
+    
+    height:8vh;
 `
 
 export const LogoLink = styled(Link)`
