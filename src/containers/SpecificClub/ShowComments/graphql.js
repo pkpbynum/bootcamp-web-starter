@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export const ADDEVAL = gql`
-query addEvaluation($input: AddEvaluationInput!){
+mutation addEvaluation($input: AddEvaluationInput!){
     addEvaluation(input: $input){
         id
         hoursOfMeeting,
