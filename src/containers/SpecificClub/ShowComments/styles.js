@@ -40,6 +40,7 @@ export const CommentButton = styled.button`
     font-size: 3vh;
     font-weight: bold;
     color: white;
+    padding: 2vh;
 `
 export const CommentBubble = styled.div`
     font-family: ${({ theme }) => theme.fonts.standard};
@@ -51,4 +52,13 @@ export const CommentBubble = styled.div`
     border-radius: 2vh;
     padding: 2vh;
 
+`
+export const BubbleDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 70%;
+    border-radius: 1vh;
 `
