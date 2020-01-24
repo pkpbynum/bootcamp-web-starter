@@ -49,7 +49,7 @@ const NavBar = ({ setTokenState }) => {
             Browse All Clubs
         </NavButton>
       </ButtonLink>
-      <ButtonLink to="/Browse">
+      <ButtonLink to="/TopClubs">
         <NavButton>
             Top Clubs
         </NavButton>

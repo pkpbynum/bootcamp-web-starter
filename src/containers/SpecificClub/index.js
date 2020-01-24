@@ -44,14 +44,7 @@ const SpecificClub = () => {
             <RatingHead>Rating:</RatingHead>
             <Rating>{data.getClub.avgRating}</Rating>
           </SmallerContainer>
-          <SmallerContainer>
-            <EmailHead>Email:</EmailHead>
-            <Email>{data.getClub.email}</Email>
-          </SmallerContainer>
-          <SmallerContainer>
-            <WebsiteHead>Website:</WebsiteHead>
-            <Website>{data.getClub.website}</Website>
-          </SmallerContainer>
+
           <SmallerContainer>
             <SizeHead>Size:</SizeHead>
             <Size>{data.getClub.size}</Size>
@@ -64,6 +57,16 @@ const SpecificClub = () => {
             </Competitiveness>
           </SmallerContainer>
         </SmallContainer>
+      </LargeContainer>
+      <LargeContainer>
+        <SmallerContainer>
+          <EmailHead>Email:</EmailHead>
+          <Email>{data.getClub.email}</Email>
+        </SmallerContainer>
+        <SmallerContainer>
+          <WebsiteHead>Website:</WebsiteHead>
+          <Website>{data.getClub.website}</Website>
+        </SmallerContainer>
       </LargeContainer>
       <ShowComments />
     </div>

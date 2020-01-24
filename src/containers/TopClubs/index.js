@@ -9,9 +9,7 @@ import ShowClubs from './ShowClubs'
 import { ClubContainer } from './styles'
 
 const Clubs = () => {
-
   const { loading, error, data } = useQuery(ALLCLUBS)
-
 
   if (loading) return 'Loading!'
   if (error) return 'error!'
