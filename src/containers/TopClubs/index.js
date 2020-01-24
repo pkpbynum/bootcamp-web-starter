@@ -21,7 +21,7 @@ const Clubs = () => {
     data.allClubs.map(el => arr.push(el))
 
     arr.sort((a, b) => {
-      if (a.avgRating > b.avgRating) {
+      if (a.avgRating < b.avgRating) {
         return 1
       }
 
