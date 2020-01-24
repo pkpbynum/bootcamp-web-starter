@@ -2,9 +2,11 @@ import styled from 'styled-components'
 
 export const CommentContainer = styled.div`
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 1vh;
     margin: 1vh;
-    width: 70%;
+    width: 90%;
     background-color: lightgrey;
     border-radius: 1vh;
 `
