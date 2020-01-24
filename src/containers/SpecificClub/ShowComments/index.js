@@ -25,7 +25,7 @@ const ShowComments = ({ id }) => {
   const [createEvaluation] = useMutation(ADDEVAL, {
     variables: {
       input: {
-        id,
+        clubId: id,
         ...form,
       },
     },
@@ -62,9 +62,9 @@ const ShowComments = ({ id }) => {
       )}
 
       <CommentContainer>
-        <CommentInput placeholder="Hours of Meeting" value={form.hoursOfMeeting} onChange={e => setForm({ hoursOfMeeting: e.target.value })} />
-        <CommentInput placeholder="Hours of Work" value={form.hoursOfWork} onChange={e => setForm({ hoursOfWork: e.target.value })} />
-        <CommentInput placeholder="Rating" value={form.rating} onChange={e => setForm({ rating: e.target.value })} />
+        <CommentInput placeholder="Hours of Meeting" value={form.hoursOfMeeting} onChange={e => setForm({ hoursOfMeeting: Number(e.target.value) })} />
+        <CommentInput placeholder="Hours of Work" value={form.hoursOfWork} onChange={e => setForm({ hoursOfWork: Number(e.target.value) })} />
+        <CommentInput placeholder="Rating" value={form.rating} onChange={e => setForm({ rating: Number(e.target.value) })} />
         <CommentInput placeholder="Comments" value={form.comments} onChange={e => setForm({ comments: e.target.value })} />
         <CommentButton onClick={createEvaluation}>Comment</CommentButton>
       </CommentContainer>
