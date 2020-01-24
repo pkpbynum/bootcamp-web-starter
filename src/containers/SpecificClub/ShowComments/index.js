@@ -56,11 +56,11 @@ const ShowComments = ({ id }) => {
 
       <CommentContainer>
         <Comment style={{ fontWeight: 'bold' }}> Comments: </Comment>
-
-        {evalData.getEvaluationsOfClub.map(
-          ({ id }) => <p key={id}>{`${id}`}</p>,
-        )}
       </CommentContainer>
+      {evalData.getEvaluationsOfClub.map(
+        ({ id }) => (<CommentContainer><Comment key={id}>{`${id}`}</Comment></CommentContainer>),
+      )}
+
       <CommentContainer>
         <CommentInput placeholder="Hours of Meeting" value={form.hoursOfMeeting} onChange={e => setForm({ hoursOfMeeting: e.target.value })} />
         <CommentInput placeholder="Hours of Work" value={form.hoursOfWork} onChange={e => setForm({ hoursOfWork: e.target.value })} />
@@ -68,6 +68,7 @@ const ShowComments = ({ id }) => {
         <CommentInput placeholder="Comments" value={form.comments} onChange={e => setForm({ comments: e.target.value })} />
         <CommentButton onClick={createEvaluation}>Comment</CommentButton>
       </CommentContainer>
+
     </>
   )
 }

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 export const ResultCard = styled.div`
     width: 75%;
     display: flex;
+    justify-content: space-between;
     border: none;
     padding: 3vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -35,4 +36,12 @@ export const StyledLink = styled(Link)`
     border: none;
     margin-left: auto;
     margin-right: auto;
+`
+export const RatingText = styled.p`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: black;
+    font-weight: bold;
+    font-size: 4vh;
+    margin-right: 5%;
+    align-self: flex-end;
 `
