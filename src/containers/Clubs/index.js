@@ -18,6 +18,7 @@ const Clubs = () => {
   const [message, setMessage] = useState('')
   const history = useHistory()
   const [clubs, setClubs] = useState([])
+  const [sortState, setSortState] = useState(0)
 
   const { loading, error, data } = useQuery(ALLCLUBS)
 
@@ -41,18 +42,29 @@ const Clubs = () => {
   console.log(data2)
 
   const clubArray = () => {
+    let output = []
     if (!data2) {
       console.log(data.allClubs)
-      return data.allClubs
+      output = data.allClubs
+    } else {
+      console.log(data2.search)
+      output = data2.search
     }
-    console.log(data2.search)
-    return data2.search
+
+    if (sortState === 1) {
+      output.sort((a, b) => ((a.name > b.name) ? 1 : -1))
+    // } else if (sortState === 2) {
+    //   output.sort((a, b) => ((a.rating > b.rating) ? 1 : -1))
+    // } else if (sortState === 3) {
+    //   output.sort((a, b) => ((a.rating > b.rating) ? 1 : -1))
+    }
+    return output
   }
 
 
   return (
     <ClubContainer>
-      <SearchBar input={input} setInput={setInput} search={search} />
+      <SearchBar input={input} setInput={setInput} search={search} sortState={sortState} setSortState={setSortState} />
       <ShowClubs clubArray={clubArray()} />
     </ClubContainer>
 

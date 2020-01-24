@@ -11,9 +11,13 @@ import {
 } from './graphql'
 
 
-const SearchBar = ({ input, setInput, search }) => {
+const SearchBar = ({
+  input, setInput, search, sortState, setSortState,
+}) => {
   const [message, setMessage] = useState('')
   const history = useHistory()
+
+  console.log(sortState)
 
   /*
   const [search, { loading, error }] = useLazyQuery(
@@ -41,9 +45,9 @@ const SearchBar = ({ input, setInput, search }) => {
       <SearchButton onClick={search}>Search</SearchButton>
       <SortContainer>
         <p style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>Sort By: </p>
-        <SmallButton>A-Z</SmallButton>
-        <SmallButton>Rank</SmallButton>
-        <SmallButton>Hours</SmallButton>
+        <SmallButton onClick={() => setSortState(1)}>A-Z</SmallButton>
+        <SmallButton onClick={() => setSortState(2)}>Rating</SmallButton>
+        <SmallButton onClick={() => setSortState(3)}>Hours</SmallButton>
       </SortContainer>
     </SearchContainer>
   )
