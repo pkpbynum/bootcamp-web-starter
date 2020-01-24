@@ -8,6 +8,7 @@ query getClub($clubId:ID!){
           email
           website
           summary
+          avgRating
           competitiveness
           size
         }

@@ -42,7 +42,7 @@ const SpecificClub = () => {
         <SmallContainer>
           <SmallerContainer>
             <RatingHead>Rating:</RatingHead>
-            <Rating>{data.getClub.rating}</Rating>
+            <Rating>{data.getClub.avgRating}</Rating>
           </SmallerContainer>
           <SmallerContainer>
             <EmailHead>Email:</EmailHead>
