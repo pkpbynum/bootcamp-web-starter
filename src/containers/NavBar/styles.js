@@ -64,6 +64,9 @@ export const LogoLink = styled(Link)`
     height: 8vh;
     border: none;
     margin: 0.7vh;
+    &:hover{
+        cursor: pointer;
+    }
 `
 export const ButtonLink = styled(Link)`
     text-decoration: none;
